@@ -59,8 +59,10 @@ public class Servlet1 extends HttpServlet {
             request.getRequestDispatcher("jsp/ingresar.jsp").forward(request, response);
         }else if(formulario.equals("cotizacion")){
             request.getRequestDispatcher("jsp/cotizacion.jsp").forward(request, response);
-        }else {
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+        }else if(formulario.equals("ent")){
+            request.getRequestDispatcher("jsp/loginEntidad.jsp").forward(request, response);
+        }else if(formulario.equals("emp")) {
+            request.getRequestDispatcher("jsp/loginEmpleado.jsp").forward(request, response);
         }
         }catch (Exception e){
             System.out.println(e);

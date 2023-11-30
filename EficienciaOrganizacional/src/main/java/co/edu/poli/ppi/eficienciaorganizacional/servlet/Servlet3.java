@@ -16,7 +16,7 @@ public class Servlet3 extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
-            HttpSession sesion = request.getSession(true);
+           /* HttpSession sesion = request.getSession(true);
 
             RegistrosActividades registro = (RegistrosActividades) sesion.getAttribute("registro");
 
@@ -39,6 +39,13 @@ public class Servlet3 extends HttpServlet {
             request.setAttribute("descripcion", vardescripcion);
 
             request.getRequestDispatcher("jsp/editarservicio.jsp").forward(request, response);
+
+            */
         }
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
     }
 }
