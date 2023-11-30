@@ -1,12 +1,5 @@
-<%-- 
-    Document   : cotizacion
-    Created on : 17 abr. 2023, 06:26:13
-    Author     : danie
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html>
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,48 +42,48 @@
                         <form action="Servlet4" method="POST">
                             <table border="1" cellpadding="5" style="padding: 2em;">
                                 <thead>
-                                    <tr>
-                                        <th>Nivel de riesgo</th>
-                                        <th>Cantidad contratistas</th>
-                                    </tr>
+                                <tr>
+                                    <th>Nivel de riesgo</th>
+                                    <th>Cantidad contratistas</th>
+                                </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <select name="nivel" size="2">
-                                                <option value="1" selected="">Clacificacion de riesgo I, II ó III</option>
-                                                <option value="2">Clacificacion de riesgo IV ó V</option>
-                                            </select>
-                                        </td>
-                                        <td>
-                                            <input type="text"
-                                                   name="cantidad"
-                                                   style="width: 250px; height: 20px;"/>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Correo Electronico
-                                            <input type="text"
-                                                   name="correo"
-                                                   style="width: 120px; height: 20px;"/>
-                                        </td>
-                                        <td>
-                                            Numero de telefono
-                                            <input type="text"
-                                                   name="numero"
-                                                   style="width: 120px; height: 20px;"/>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3">
-                                            <input type="hidden"
-                                                   value="EnviarCotizacion"
-                                                   name="formulario"/>
-                                            <input type="submit"
-                                                   value="Enviar Cotizacion"/>
-                                        </td>
-                                    </tr>
+                                <tr>
+                                    <td>
+                                        <select name="nivel" size="2">
+                                            <option value="1" selected="">Clacificacion de riesgo I, II ó III</option>
+                                            <option value="2">Clacificacion de riesgo IV ó V</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text"
+                                               name="cantidad"
+                                               style="width: 250px; height: 20px;"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Correo Electronico
+                                        <input type="text"
+                                               name="correo"
+                                               style="width: 120px; height: 20px;"/>
+                                    </td>
+                                    <td>
+                                        Numero de telefono
+                                        <input type="text"
+                                               name="numero"
+                                               style="width: 120px; height: 20px;"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <input type="hidden"
+                                               value="EnviarCotizacion"
+                                               name="formulario"/>
+                                        <input type="submit"
+                                               value="Enviar Cotizacion"/>
+                                    </td>
+                                </tr>
                                 </tbody>
                             </table>
                         </form>
@@ -100,12 +93,12 @@
         </header>
         <footer  class="footer">
             <div class="container--foot footer__caption">
-                <section class="download"> 
+                <section class="download">
                     <div class="SloganSection">
                         <img src="img/logo.png">
-                        
+
                     </div>
-                    
+
                     <div class="footer__copy">
                         <h4 class="Slogan__text">trabajanos con sentido empresarial y social</h4>
                         <p class="copyright">Eficiena Organizacional &COPY; 2022 Todos los derechos reservados</p>
@@ -116,20 +109,20 @@
                 </section>
                 <section class="get-email">
                     <h3 class="tittle-footer">¿Estás listo para trabajar con nosotros ?</h3>
-                     <form action="" class="newsletter newsletter--modifier">
+                    <form action="" class="newsletter newsletter--modifier">
                         <input type="text" class="newsletter__input" placeholder="Ingresa tu email">
                         <input type="submit" class="newsletter__submit" value="Comienza hoy">
                     </form>
                     <div class="socialmedia">
                         <p class="socialmedia__legend">Siguenos en: </p>
-                        
+
                         <i class='socialmedia__icon bx bxl-facebook-circle' ></i>
                         <i class='socialmedia__icon bx bxl-linkedin-square' ></i>
                         <i class='socialmedia__icon bx bxl-twitter' ></i>
                         <a href="https://www.instagram.com/"><i class='socialmedia__icon bx bxl-instagram' ></i></a>
                     </div>
                 </section>
-            </div>      
+            </div>
         </footer>
     </body>
 </html>

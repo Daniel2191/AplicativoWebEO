@@ -479,7 +479,7 @@ body{
     float: left;
     width: 60%;
     height: 250px;
-    
+
 }
 
 .Slogan__text{
@@ -805,7 +805,6 @@ body{
     .check__item{
         width: 100%;
         border: none;
-        padding: none;
         justify-content: center;
     }
 
