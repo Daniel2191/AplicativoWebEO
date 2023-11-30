@@ -16,12 +16,10 @@
                     </div>
                     <div class="links">
                         <a href="Servlet1?formulario=index" class="link">Inicio</a>
-                        <a href="Servlet1?formulario=cotizacion" class="link">Cotizacion</a>
-                        <!--a href = "Servlet1?formulario=servicios" class="link">Servicios prestados</a>
-                        a href="Servlet1?formulario=novedades" class="link">Novedades</a>
-                        <a href="Servlet1?formulario=contacto" class="link">Contacto</a>
-                        <a href="Servlet1?formulario=nosotros" class="link">Nosotros</a>
-                        <a href="Servlet1?formulario=ingresar" class="link link--active">Ingresar</a-->
+                        <a href="jsp/cotizacion.jsp" class="link">Cotizacion</a>
+                        <a href="jsp/loginEntidad.jsp" class="link">Entidad</a>
+                        <a href="jsp/loginEmpleado.jsp" class="link">Empleado</a>
+
                     </div>
                 </div>
             </nav>
