@@ -9,7 +9,8 @@
 <html>
 <head>
     <title>Registro Entidad</title>
-    <link href="../css/login.css" rel="stylesheet" type="text/css"/>
+    <link href="css/login.css" rel="stylesheet" type="text/css"/>
+
 </head>
 <body>
 
@@ -17,33 +18,34 @@
         <h1>Eficiena Organizacional</h1>
         <h3>Iniciar Sesion</h3>
     </hgroup>
-    <form>
+    <form action="ServletEntidad" method="post">
         <div class="group">
-            <input type="text"><span class="highlight"></span><span class="bar"></span>
+            <input type="text" name="nit"><span class="highlight"></span><span class="bar"></span>
             <label>NIT</label>
         </div>
         <div class="group">
-            <input type="text"><span class="highlight"></span><span class="bar"></span>
+            <input type="text" name="nombre"><span class="highlight"></span><span class="bar"></span>
             <label>Nombre</label>
         </div>
         <div class="group">
-            <input type="text"><span class="highlight"></span><span class="bar"></span>
+            <input type="text" name="direccion"><span class="highlight"></span><span class="bar"></span>
             <label>Direción</label>
         </div>
         <div class="group">
-            <input type="number"><span class="highlight"></span><span class="bar"></span>
+            <input type="number" name="telefono"><span class="highlight"></span><span class="bar"></span>
             <label>Telefono</label>
         </div>
         <div class="group">
-            <input type="password"><span class="highlight"></span><span class="bar"></span>
+            <input type="password" name="pass"><span class="highlight"></span><span class="bar"></span>
             <label>Contraseña</label>
         </div>
-        <button type="button" class="button buttonBlue">Iniciar Sesion
+        <input type="hidden" value="crear" name="operacion"/>
+        <button type="submit" class="button buttonBlue">Iniciar Sesion
             <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
         </button>
     </form>
 
-    <script src="../js/login.js" type="text/javascript"></script>
 
+    <script src="js/login.js" type="text/javascript"></script>
 </body>
 </html>

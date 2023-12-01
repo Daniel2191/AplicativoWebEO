@@ -1,4 +1,4 @@
-package co.edu.poli.ppi.eficienciaorganizacional.modelo;
+package co.edu.poli.ppi.eficienciaorganizacional.DAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,9 +12,7 @@ public class Conexion {
         try {
             Class.forName("oracle.jdbc.OracleDriver");
 
-            System.out.println("Driver de ORACLE cargado");
-
-            String nombreUsuario = "PPI_EO";
+            String nombreUsuario = "us_PPI";
             String password = "98765";
             String url = "jdbc:oracle:thin:@localhost:1521:XE";
             conexion = DriverManager.getConnection(url, nombreUsuario, password);
@@ -24,6 +22,7 @@ public class Conexion {
             throw new Exception("El oracle driver no se encontro");
 
         } catch (SQLException ex){
+            System.out.println(ex);
             throw new Exception("Excepcion de SQL");
         }
 
