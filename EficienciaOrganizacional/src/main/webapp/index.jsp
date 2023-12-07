@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@page session="true" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,7 +20,23 @@
                         <a href="jsp/cotizacion.jsp" class="link">Cotizacion</a>
                         <a href="jsp/loginEntidad.jsp" class="link">Entidad</a>
                         <a href="jsp/loginEmpleado.jsp" class="link">Empleado</a>
-
+                        <a href="registroEntidad.jsp" class="link">Registro Entidades</a>
+                        <a href="registroEmpleado.jsp" class="link">Registro Empleados</a>
+                        <a href="jsp/entidad.jsp" class="link">Lista Entidades</a>
+                        <a href="jsp/empleado.jsp" class="link">Lista Empleados</a>
+                        <%
+                            if (session.getAttribute("rol") != null){
+                                System.out.println("No es null");
+                                if (session.getAttribute("rol").equals("101")) {
+                                    System.out.println("Aministrador");
+                                    System.out.print("<a href='registroEntidad.jsp' class='link'>Registro Entidades</a>");
+                                    System.out.print("<a href='registroEmpleado.jsp' class='link'>Registro Empleados</a>");
+                                    System.out.print("<a href='jsp/entida.jsp' class='link'>Lista Entidades</a>");
+                                    System.out.print("<a href='jsp/empleado.jsp' class='link'>Lista Empleados</a>");
+                                }
+                            }
+                            System.out.println("Es null");
+                        %>
                     </div>
                 </div>
             </nav>

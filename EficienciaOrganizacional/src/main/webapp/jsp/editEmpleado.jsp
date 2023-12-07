@@ -27,7 +27,7 @@
 %>
     <form action="../ServletEmpleado" method="post">
         <div class="group">
-            <input type="number" name="documento" value="<%= rs.getInt("DOCUMENTO")%>"><span class="highlight"></span><span class="bar"></span>
+            <input type="number" name="documento" value="<%= rs.getInt("DOCUMENTO")%>" ><span class="highlight"></span><span class="bar"></span>
             <label>Documento</label>
         </div>
         <div class="group">

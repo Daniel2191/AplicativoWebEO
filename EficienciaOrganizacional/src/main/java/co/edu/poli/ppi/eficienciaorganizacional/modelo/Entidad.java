@@ -7,17 +7,32 @@ public class Entidad {
     private String direccion;
     private String telefono;
     private String password;
+    private String correo;
 
-    public Entidad(String nit, String nombre, String direccion, String telefono, String password) {
+    public Entidad(String nit, String nombre, String direccion, String telefono, String password, String correo) {
         this.nit = nit;
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
         this.password = password;
+        this.correo = correo;
+    }
+
+    public Entidad(String password, String correo) {
+        this.password = password;
+        this.correo = correo;
     }
 
     public Entidad(){
 
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
     public String getNit() {

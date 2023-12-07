@@ -18,19 +18,17 @@
         <h1>Eficiena Organizacional</h1>
         <h3>Iniciar Sesion</h3>
     </hgroup>
-    <form>
+    <form action="../ServletEntidad" method="post">
         <div class="group">
-            <input type="email"><span class="highlight"></span><span class="bar"></span>
+            <input type="email" name="correo"><span class="highlight"></span><span class="bar"></span>
             <label>Correo</label>
         </div>
         <div class="group">
-            <input type="password"><span class="highlight"></span><span class="bar"></span>
+            <input type="password" name="pass"><span class="highlight"></span><span class="bar"></span>
             <label>Contraseña</label>
         </div>
-        <button type="button" class="button buttonBlue">Iniciar Sesion
-            <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
-        </button>
-        <button type="button" class="button buttonBlue">Registrar Entidad
+        <button type="submit" class="button buttonBlue">Iniciar Sesion
+            <input type="hidden" value="login" name="operacion"/>
             <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
         </button>
     </form>

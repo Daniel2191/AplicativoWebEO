@@ -10,7 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Empleado</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 </head>
@@ -56,7 +56,7 @@
                 <td class="text-center"><%= rs.getString("NOMBRE_R")%></td>
                 <td class="text-center">
                     <form method="post" action="../ServletEmpleado">
-                        <a class="btn btn-warning btn-sm" href="jsp/editEmpleado.jsp?id=<%= rs.getInt("DOCUMENTO")%>">Editar</a>
+                        <a class="btn btn-warning btn-sm" href="../jsp/editEmpleado.jsp?id=<%= rs.getInt("DOCUMENTO")%>">Editar</a>
                         <input type="hidden" value="eliminar" name="operacion"/>
                         <input type="hidden" value="<%= rs.getInt("DOCUMENTO")%>" name="id"/>
                         <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
