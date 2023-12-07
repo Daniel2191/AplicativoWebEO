@@ -1,6 +1,7 @@
 package co.edu.poli.ppi.eficienciaorganizacional.DAO;
 
 import co.edu.poli.ppi.eficienciaorganizacional.modelo.Empleado;
+import co.edu.poli.ppi.eficienciaorganizacional.modelo.Entidad;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -74,6 +75,47 @@ public class DAOEmpleado extends Conexion {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+
+    }
+
+    public boolean login(Empleado emp) throws SQLException {
+        try {
+            String sql = "SELECT * FROM EMPLEADOS WHERE CONTRASEÑA=? AND CORREO_PER=?";
+
+            PreparedStatement ps = getConexion().prepareStatement(sql);
+            ps.setString(1, emp.getPassword());
+            ps.setString(2, emp.getCorreo());
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+
+            }
+            return true;
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        return false;
+
+    }
+
+    public int rol(String correo) throws SQLException {
+        try {
+            String sql = "SELECT * FROM EMPLEADOS WHERE CORREO_PER=?";
+
+            PreparedStatement ps = getConexion().prepareStatement(sql);
+            ps.setString(1, correo);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                int c = rs.getInt("ROL_CODIGO");
+                return c;
+            }
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        return 5;
 
     }
 }

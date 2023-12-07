@@ -27,6 +27,11 @@ public class Empleado {
         this.rol = rol;
     }
 
+    public Empleado(String correo, String password) {
+        this.correo = correo;
+        this.password = password;
+    }
+
     public int getDocumento() {
         return documento;
     }

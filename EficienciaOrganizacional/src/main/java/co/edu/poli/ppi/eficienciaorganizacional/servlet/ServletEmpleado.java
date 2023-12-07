@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 
@@ -33,6 +34,8 @@ public class ServletEmpleado extends HttpServlet {
                 actualizarEmpleado(req, resp);
             }else if (operacion.equals("eliminar")) {
                 eliminarEmpleado(req, resp);
+            }else if (operacion.equals("login")) {
+                loginEmpleado(req, resp);
             }
         }
 
@@ -59,10 +62,10 @@ public class ServletEmpleado extends HttpServlet {
 
             if (daoEmpleado.guardar(e)){
                 System.out.println("Registro Exitoso!!");
-                request.getRequestDispatcher("jsp/empleado.jsp").forward(request, response);
+                response.sendRedirect("jsp/empleado.jsp");
             }else {
                 System.out.println("Error al guardar");
-                request.getRequestDispatcher("registroEmpleado.jsp").forward(request, response);
+                response.sendRedirect("registroEmpleado.jsp");
             }
 
         } catch (Exception ex) {
@@ -91,10 +94,10 @@ public class ServletEmpleado extends HttpServlet {
 
             if (daoEmpleado.actualizar(e)){
                 System.out.println("Actualizacion Exitoso!!");
-                request.getRequestDispatcher("jsp/empleado.jsp").forward(request, response);
+                response.sendRedirect("jsp/empleado.jsp");
             }else {
                 System.out.println("Error al atualizar");
-                request.getRequestDispatcher("jsp/editEmpleado.jsp");
+                response.sendRedirect("jsp/editEmpleado.jsp");
             }
 
         } catch (Exception ex) {
@@ -113,10 +116,10 @@ public class ServletEmpleado extends HttpServlet {
 
             if (daoEmpleado.eliminar(id)){
                 System.out.println("Registro Eliminado");
-                request.getRequestDispatcher("jsp/empleado.jsp").forward(request, response);
+                response.sendRedirect("jsp/empleado.jsp");
             }else {
                 System.out.println("Error al eliminar");
-                request.getRequestDispatcher("jsp/empleado.jsp");
+                response.sendRedirect("jsp/empleado.jsp");
             }
 
         } catch (Exception ex) {
@@ -124,5 +127,33 @@ public class ServletEmpleado extends HttpServlet {
         }
     }
 
+    private void loginEmpleado(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        try {
+            // Captura los valores que el empleado escribió en el formulario
+            HttpSession nueva_session = request.getSession();
+
+
+            String pass = request.getParameter("pass");
+            String correo = request.getParameter("correo");
+            Empleado e = new Empleado(pass, correo);
+
+            DAOEmpleado daoEmpleado = new DAOEmpleado();
+
+            if (daoEmpleado.login(e)){
+                int rol=daoEmpleado.rol(correo);
+                nueva_session.setAttribute("rol", rol);
+                System.out.println(rol);
+                System.out.println("Ingreso exitoso");
+                request.getRequestDispatcher("index.jsp").forward(request, response);
+            }else {
+                System.out.println("Error al INGRESAR");
+                response.sendRedirect("../jsp/loginEmpleado.jsp");
+            }
+
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+    }
 
 }

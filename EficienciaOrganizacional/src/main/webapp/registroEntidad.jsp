@@ -36,6 +36,10 @@
             <label>Telefono</label>
         </div>
         <div class="group">
+            <input type="email" name="correo"><span class="highlight"></span><span class="bar"></span>
+            <label>Correo</label>
+        </div>
+        <div class="group">
             <input type="password" name="pass"><span class="highlight"></span><span class="bar"></span>
             <label>Contraseña</label>
         </div>

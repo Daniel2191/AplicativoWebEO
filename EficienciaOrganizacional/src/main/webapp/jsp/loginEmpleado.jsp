@@ -18,7 +18,7 @@
         <h1>Eficiena Organizacional</h1>
         <h3>Iniciar Sesion</h3>
     </hgroup>
-    <form>
+    <form action="../ServletEmpleado" method="post">
         <div class="group">
             <input type="email"><span class="highlight"></span><span class="bar"></span>
             <label>Correo</label>
@@ -27,12 +27,11 @@
             <input type="password"><span class="highlight"></span><span class="bar"></span>
             <label>Contraseña</label>
         </div>
-        <button type="button" class="button buttonBlue">Iniciar Sesion
+        <button type="submit" class="button buttonBlue">Iniciar Sesion
+            <input type="hidden" value="login" name="operacion"/>
             <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
         </button>
-        <button type="button" class="button buttonBlue">Registrar Entidad
-            <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
-        </button>
+
     </form>
 
     <script src="../js/login.js" type="text/javascript"></script>
